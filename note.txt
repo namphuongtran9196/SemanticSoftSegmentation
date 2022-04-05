@@ -1,0 +1,15 @@
+features preprocess: mục đích giảm chiều của matrix features từ h x w x 128 xuống h x w x 3
+    -> dùng imguidefilter để filter features theo tính chất của image ban đầu
+    -> dùng PCA để giảm từ 128 xuống 3
+
+    . Hàm cv2.ximgproc.guided_filter trong opencv trả về  kết quả sai so với kết quả trên matlab: https://github.com/opencv/opencv_contrib/issues/760
+    . Em dùng hàm của 1 ông tự implements lại, kết quả ra cũng không đúng 100%, sai số khoảng 5%
+
+superpixels: dùng để tính 2 cái affinities
+    . trên matlab người ta dùng thuật toán slic0 để  segmentation các superpixels, mà trong python em tìm ko thấy thuật toán slic0, chỉ có thuật toán slic
+
+eigenvalues, eigenvector:
+    . eigenvalues, eigenvector trong python ra các vector cùng độ lớn giá trị nhưng khác dấu, có chỗ cùng dấu ??
+
+
+
